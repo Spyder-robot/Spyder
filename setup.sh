@@ -31,6 +31,7 @@ programmer
   mosi = 5; 			
   miso = 6; 			
 ;			
+EOL
 
 sudo apt install -y python3-pip
 
