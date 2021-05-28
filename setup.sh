@@ -12,7 +12,7 @@ sudo apt-get install -y proftpd
 sudo apt-get install -y i2c-tools
 
 sudo apt-get install -y avrdude
-cat > /etc/avrdude.conf << 'EOL'
+sudo cat > /etc/avrdude.conf << 'EOL'
 programmer 			
   id = "Arduino_1"; 			
   desc = "Arduino 1";			
@@ -49,5 +49,5 @@ sudo apt-get install -y python-picamera python3-picamera
 
 sudo apt-get install -y fonts-dejavu and fonts-dejavu-core and fonts-font-awesome
 
-wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/i2samp.sh
-bash i2samp.sh -y
+sudo wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/i2samp.sh
+sudo bash i2samp.sh -y
