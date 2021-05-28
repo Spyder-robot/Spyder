@@ -12,7 +12,7 @@ sudo apt-get install -y proftpd
 sudo apt-get install -y i2c-tools
 
 sudo apt-get install -y avrdude
-sudo cat > /etc/avrdude.conf << 'EOL'
+sudo sh -c 'cat > /etc/avrdude.conf' << 'EOL'
 programmer 			
   id = "Arduino_1"; 			
   desc = "Arduino 1";			
