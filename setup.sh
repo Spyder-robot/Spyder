@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get update
+sudo apt-get update 
 sudo apt-get upgrade -y
 
 sudo raspi-config nonint do_spi 0
@@ -9,8 +9,29 @@ sudo raspi-config nonint do_serial 2
 sudo raspi-config nonint do_camera 0
 
 sudo apt-get install -y proftpd
-sudo apt-get install -y avrdude
 sudo apt-get install -y i2c-tools
+
+sudo apt-get install -y avrdude
+cat > /etc/avrdude.conf << 'EOL'
+programmer 			
+  id = "Arduino_1"; 			
+  desc = "Arduino 1";			
+  type = "linuxgpio"; 			
+  reset = 22; 			
+  sck = 27; 			
+  mosi = 4; 			
+  miso = 17; 			
+;			
+programmer 			
+  id = "Arduino_2"; 			
+  desc = "Arduino 2";			
+  type = "linuxgpio"; 			
+  reset = 26; 			
+  sck = 13; 			
+  mosi = 5; 			
+  miso = 6; 			
+;			
+
 sudo apt install -y python3-pip
 
 sudo pip3 install rpi.gpio
@@ -28,4 +49,5 @@ sudo apt-get install -y python-picamera python3-picamera
 
 sudo apt-get install -y fonts-dejavu and fonts-dejavu-core and fonts-font-awesome
 
-curl -sS https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/i2samp.sh -y | bash
+wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/i2samp.sh
+bash i2samp.sh -y
