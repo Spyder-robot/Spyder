@@ -12,27 +12,6 @@ sudo apt-get install -y proftpd
 sudo apt-get install -y i2c-tools
 
 sudo apt-get install -y avrdude
-sudo sh -c 'cat > /etc/avrdude.conf' << 'EOL'
-programmer 			
-  id = "Arduino_1"; 			
-  desc = "Arduino 1";			
-  type = "linuxgpio"; 			
-  reset = 22; 			
-  sck = 27; 			
-  mosi = 4; 			
-  miso = 17; 			
-;			
-programmer 			
-  id = "Arduino_2"; 			
-  desc = "Arduino 2";			
-  type = "linuxgpio"; 			
-  reset = 26; 			
-  sck = 13; 			
-  mosi = 5; 			
-  miso = 6; 			
-;			
-EOL
-
 sudo apt install -y python3-pip
 
 sudo pip3 install rpi.gpio
